@@ -1,0 +1,465 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Crimson Pro", serif;
+
+  background-color: #1a1d25;
+}
+
+/* --------Navbar------------- */
+.navbar {
+  background: #15171d;
+  height: 70px;
+  width: 100%;
+  display: block;
+}
+.navbar .navbar-central-content {
+  background: inherit;
+  max-width: 1420px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar .navbar-central-content .left-navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navbar .navbar-central-content .left-navbar div {
+  margin: 0 1rem;
+  color: rgb(243, 231, 231);
+  font-weight: 500;
+  font-size: 1.25rem;
+  cursor: pointer;
+  letter-spacing: 0.34px;
+}
+.navbar .navbar-central-content .left-navbar div:hover {
+  color: rgb(129, 167, 189);
+}
+.navbar .navbar-central-content .right-navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navbar .navbar-central-content .right-navbar div {
+  margin: 0 1rem;
+}
+.navbar .navbar-central-content .right-navbar div.hero-info span {
+  display: block;
+  color: whitesmoke;
+}
+.navbar .navbar-central-content .right-navbar div.hero-info span.online {
+  color: #07ef9c;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+/* -------------------Navbar End------------------ */
+.middle {
+  max-width: 1520px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.dashboard {
+  max-width: 340px;
+  min-width: 250px;
+  margin-top: 2px;
+  margin-left: 0.5vw;
+  width: 100%;
+  background: linear-gradient(
+    60deg,
+    rgba(39, 39, 39, 0),
+    rgba(255, 255, 255, 0.02)
+  );
+  background-color: rgba(0, 0, 0, 0.301);
+  border-radius: 9px;
+  box-shadow: 0 2px 40px rgba(255, 255, 255, 0.032);
+  position: relative;
+}
+.dashboard .score-container {
+  width: 96%;
+  margin: 16px 1.25%;
+}
+.dashboard .score-main {
+  position: absolute;
+  top: 48px;
+  left: 27%;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.dashboard .choose-bullet-container {
+  box-sizing: border-box;
+  width: 94%;
+  margin: 16px 2.5%;
+  margin-top: -12px;
+  padding: 16px 12px;
+  border-radius: 9px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: azure;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.line {
+  width: 96%;
+  margin: 10px;
+  height: 1.86px;
+  background-color: rgba(83, 85, 83, 0.185);
+}
+.dashboard .choose-bullet-container .weapon-circles {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.dashboard .choose-bullet-container .weapon-circles img {
+  margin: 6px 0;
+  cursor: pointer;
+}
+.white-title {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-left: 18px;
+}
+.white-title span {
+  font-size: 0.8rem;
+}
+/* -------------------------Stats Section---------------------- */
+.status-container {
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.status-container .stat-img img {
+  width: 55px;
+  height: 55px;
+}
+.status-container .stat-status {
+  margin-left: 8px;
+  width: 65px;
+  color: white;
+  font-size: 1.04rem;
+  line-height: 24px;
+}
+.stat-bar {
+  position: relative;
+  /* width: 190px; */
+  height: 12px;
+  margin-top: 24px;
+  margin-left: 18px;
+  transform: skew(-38deg, 0deg);
+  z-index: 100;
+  border-radius: 6px;
+}
+.health-bar {
+  background-color: #07d289;
+  box-shadow: 0 2px 12px -2px #07d288e0;
+  width: 190px;
+}
+.bullet-bar {
+  background-color: #fdca77;
+  box-shadow: 0 2px 12px -2px #fdca77d7;
+  width: 150px;
+}
+.coin-bar {
+  background-color: #01c3c3;
+  box-shadow: 0 2px 12px -2px #01c3c3de;
+  width: 40px;
+}
+.stat-bar::before {
+  content: ".";
+  color: rgba(216, 191, 216, 0.021);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(216, 191, 216, 0.185);
+  width: 190px;
+  height: 12px;
+  z-index: -10;
+  border-radius: 6px;
+}
+.green {
+  color: #07ef9c;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.stat-container-parent {
+  width: 100%;
+  margin: 8px 0;
+}
+.stat-container-parent .one {
+  /* vertical-align: top; */
+  display: inline-block;
+  width: 33%;
+  height: 60px;
+}
+.stat-container-parent .two {
+  vertical-align: top;
+  display: inline-block;
+  width: 66%;
+  height: 60px;
+}
+@media (max-width: 1440px) {
+  .stat-container-parent {
+    margin-bottom: 0;
+  }
+  .stat-container-parent .two {
+    width: 100%;
+    padding-left: 25px;
+    height: 40px;
+  }
+  .stat-container-parent .one {
+    width: 100%;
+  }
+  .stat-bar {
+    margin-top: 6px;
+  }
+  .last-container {
+    display: none;
+  }
+}
+
+/* --------------------bottom container------------------ */
+.bottom-flex {
+  display: flex;
+  flex-direction: row;
+}
+.bottom-hero {
+  position: relative;
+  min-width: 1400px;
+}
+.bottom-hero #play-button {
+  position: absolute;
+  right: 35px;
+  top: -110px;
+  z-index: 25;
+  cursor: pointer;
+  transition: hover 0.3s ease-in;
+}
+.bottom-hero #play-button:hover {
+  transform: scale(1.04);
+}
+.bottom-hero #play-button:active {
+  transform: scale(0.96);
+}
+.bottom-container {
+  box-sizing: border-box;
+  padding: 12px 14px;
+  padding-bottom: 16px;
+  width: 350px;
+  background-color: rgba(0, 0, 0, 0.301);
+  border-radius: 8px;
+  color: white;
+  margin: 8px 10px 12px 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 30px rgba(255, 255, 255, 0.058);
+  border: 2px solid #dfca0d00;
+}
+.bottom-container:hover {
+  border: 2px solid #dfca0d3d;
+  box-shadow: 0 2px 15px #ead40c28;
+}
+.first-bottom-container {
+  border: 2px solid #dfca0d;
+  box-shadow: 0 4px 35px #ead40c42;
+}
+.bottom-container .top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bottom-container .top-section div img {
+  height: 12px;
+  width: 12px;
+}
+.date {
+  color: rgba(155, 155, 155, 0.555);
+  font-size: 0.8rem;
+}
+.bottom-container .mid-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.bottom-container .mid-section div {
+  width: 60px;
+}
+.bottom-container .mid-section .writing {
+  font-weight: 500;
+  font-size: 0.7rem;
+  font-family: "Nunito", sans-serif;
+  width: 205px;
+  padding-left: 10px;
+  letter-spacing: 0.4px;
+}
+.bottom-container .mid-section .writing span:nth-child(1) {
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: block;
+  line-height: 30px;
+  font-family: "Crimson Pro", sans-serif;
+  color: white;
+  letter-spacing: 0.6px;
+}
+.grey {
+  color: grey;
+}
+/* -------button------------- */
+.btn-level {
+  outline: none;
+  box-sizing: border-box;
+  padding: 7px 36px;
+  background-color: rgba(0, 0, 0, 0.247);
+  border: 2px solid rgba(158, 158, 158, 0.514);
+  color: white;
+  border-radius: 6px;
+  margin-right: 12px;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  /* letter-spacing: 0.2125rem; */
+  line-height: 1;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  transition: background-color 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+    border 1s cubic-bezier(0.19, 1, 0.22, 1),
+    color 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  user-select: none;
+}
+
+.btn-level .mask {
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.288);
+  height: 50px;
+  position: absolute;
+  transform: translate3d(-120%, -50px, 0) rotate3d(0, 0, 1, 45deg);
+  transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  width: 200px;
+}
+
+.btn-level:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #fff;
+  box-shadow: 0 0 5px rgba(255, 245, 245, 0.8);
+}
+
+.btn-level-active {
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 245, 245, 0.8);
+  background-color: rgba(197, 197, 243, 0.089);
+}
+
+.btn-level:hover .mask {
+  background-color: #fff;
+  transform: translate3d(120%, -100px, 0) rotate3d(0, 0, 1, 90deg);
+}
+
+.btn-level:active {
+  background-color: #fff;
+}
+
+/* -------------------------Game Canvas---------------------- */
+.gameCanvas-container {
+  width: 1164px;
+  height: 620px;
+  position: relative;
+}
+.gameCanvas-container .pause {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-image: url("../assets/UI/pause.png");
+  background-size: cover;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.gameCanvas-container .start {
+  cursor: pointer;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-image: url("../assets/UI/start.png");
+  background-size: cover;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+}
+.gameCanvas-container .main-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1164px;
+  height: 620px;
+  opacity: 1;
+  /* display: none;di */
+  z-index: 10;
+  background: url(../assets/UI/main-menu.jpg);
+  background-size: cover;
+}
+.gameCanvas-container .main-menu .main-flex {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  padding-left: 30px;
+  justify-content: center;
+  color: white;
+  font-family: "Nunito", sans-serif;
+}
+
+.gameCanvas-container .main-menu .main-flex .main-title {
+  font-size: 4.5rem;
+  font-weight: 600;
+  line-height: 110px;
+  font-family: "Crimson Pro", sans-serif;
+}
+
+.gameCanvas-container .main-menu .main-flex .main-description {
+  font-size: 0.85rem;
+
+  width: 600px;
+  line-height: 25px;
+  text-align: justify;
+  letter-spacing: 0.2px;
+}
+
+.gameCanvas-container .main-menu .main-flex .descriptions {
+  display: flex;
+  flex-direction: row;
+  color: #6d6c6d;
+  font-weight: 600;
+}
+.gameCanvas-container .main-menu .main-flex .descriptions div {
+  padding: 7px 12px;
+  background-color: rgba(0, 0, 0, 0.452);
+  border-radius: 9px;
+  margin: 24px 6px 24px 0;
+  font-size: 0.82rem;
+  font-weight: 800;
+  word-spacing: -2px;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+}
+.gameCanvas-container .main-menu .main-flex .descriptions div:hover {
+  background-color: rgba(141, 140, 140, 0.171);
+  color: rgb(194, 183, 183);
+}
+.gameCanvas-container .main-menu .main-flex .level-buttons {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 45px;
+}

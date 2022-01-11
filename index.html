@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Canvas Game</title>
+  </head>
+  <body>
+    <navbar class="navbar">
+      <div class="navbar-central-content">
+        <div class="left-navbar">
+          <div class="logo">
+            <img src="./assets/UI/Diamond Fill.png" alt="logo" height="50px" />
+          </div>
+          <div class="nav-items">Home</div>
+          <div class="nav-items">Heros</div>
+          <div class="nav-items">Bullets</div>
+          <div class="nav-items">Enemies</div>
+          <div class="nav-items">Levels</div>
+          <div class="nav-items">How To Play</div>
+          <div style="height: 70px"></div>
+        </div>
+        <div class="right-navbar">
+          <img src="./assets/UI/Shop.png" alt="shop" />
+          <img src="./assets/UI/Notifications.png" alt="Notifications" />
+          <img src="./assets/UI/Settings.png" alt="setting" />
+          <img
+            src="./assets/UI/Hero card.png"
+            alt="hero"
+            height="50px"
+            style="margin-right: -0.4rem; margin-left: 2rem"
+          />
+          <div class="hero-info">
+            <span>Mr. Robo Master</span>
+            <span class="online"> &bull; Online</span>
+          </div>
+          <img src="./assets/UI/Settingsleft.png" alt="setting" />
+        </div>
+      </div>
+    </navbar>
+    <!-- -------------------------MAIN CANVAS SECTION------------------------- -->
+    <section class="middle">
+      <div class="dashboard">
+        <img
+          src="./assets/UI/score-container.png"
+          alt="score-container"
+          class="score-container"
+        />
+        <div class="score-main" id="score-Up">0</div>
+        <div class="choose-bullet-container">
+          <div>Choose Bullets</div>
+          <div class="line"></div>
+          <div class="weapon-circles">
+            <img
+              src="./assets/UI/choose-1-hover.png"
+              alt="bullet1"
+              class="chooseBullet"
+            />
+            <img
+              src="./assets/UI/choose-2.png"
+              alt="bullet2"
+              class="chooseBullet"
+            />
+            <img
+              src="./assets/UI/choose-3.png"
+              alt="bullet3"
+              class="chooseBullet"
+            />
+            <img
+              src="./assets/UI/choose-4.png"
+              alt="bullet4"
+              class="chooseBullet"
+            />
+            <img
+              src="./assets/UI/choose-5.png"
+              alt="bullet5"
+              class="chooseBullet"
+            />
+          </div>
+        </div>
+        <div class="white-title">
+          Stats <span> (Tap to increase Stats)</span>
+        </div>
+        <div class="line"></div>
+        <div class="stat-container-parent">
+          <div class="one" id="health-increase">
+            <div class="status-container">
+              <div class="stat-img">
+                <img src="./assets/UI/stat-health.png" alt="health-stat" />
+              </div>
+              <div class="stat-status">
+                <div>Health</div>
+                <div class="green" id="health-stat">&bull; 42</div>
+              </div>
+            </div>
+          </div>
+          <div class="two">
+            <div class="stat-bar health-bar"></div>
+          </div>
+        </div>
+        <div class="stat-container-parent">
+          <div class="one" id="bullet-increase">
+            <div class="status-container">
+              <div class="stat-img">
+                <img src="./assets/UI/stat-bullet.png" alt="bullet-stat" />
+              </div>
+              <div class="stat-status">
+                <div>Bullets</div>
+                <div class="green" id="bullet-stat">&bull;180</div>
+              </div>
+            </div>
+          </div>
+          <div class="two">
+            <div class="stat-bar bullet-bar"></div>
+          </div>
+        </div>
+        <div class="stat-container-parent">
+          <div class="one" id="coin-increase">
+            <div class="status-container">
+              <div class="stat-img">
+                <img src="./assets/UI/stat-coin.png" alt="coin-stat" />
+              </div>
+              <div class="stat-status">
+                <div>Coins</div>
+                <div class="green" id="coin-stat">&bull;0</div>
+              </div>
+            </div>
+          </div>
+          <div class="two">
+            <div class="stat-bar coin-bar"></div>
+          </div>
+        </div>
+        <div class="stat-container-parent last-container">
+          <div class="one">
+            <div class="status-container">
+              <div class="stat-img">
+                <img src="./assets/UI/stat-score.png" alt="health" />
+              </div>
+              <div class="stat-status">
+                <div>Score</div>
+                <div class="green" id="score-main">&bull;0</div>
+              </div>
+            </div>
+          </div>
+          <div class="two"></div>
+        </div>
+      </div>
+      <!-- ------MAIN CANVAS SECTION------- -->
+      <div>
+        <div class="gameCanvas-container">
+          <canvas id="gameCanvas"></canvas>
+          <div class="pause"></div>
+          <div class="start"></div>
+          <div class="main-menu" id="main-menu">
+            <div class="main-flex">
+              <div class="main-title">Space Siege</div>
+              <div class="main-description">
+                Protect your Planet from Alien Attacks. Destroy Enemy space
+                Crafts. Use different bullets to attack the enemy. Fly anywhere
+                to attack. Be aware of Missiles and Slime attack. Make sure to
+                increase your Health.
+              </div>
+              <div class="descriptions">
+                <div><span style="color: aliceblue">&bull;</span> Coins</div>
+                <div><span style="color: #00e8e8">&bull;</span> Score</div>
+                <div><span style="color: #a22dff">&bull;</span> Bullet</div>
+                <div><span style="color: #ead40c">&bull;</span> Health</div>
+              </div>
+
+              <div class="level-buttons">
+                <button class="btn-level btn-level-active">
+                  Level 1
+                  <div class="mask"></div>
+                </button>
+
+                <button class="btn-level">
+                  Level 2
+                  <div class="mask"></div>
+                </button>
+
+                <button class="btn-level">
+                  Level 3
+                  <div class="mask"></div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- -------------------------MAIN CANVAS SECTION END------------------------- -->
+    <!-- -------------------------BOTTOM Hero Section------------------------- -->
+    <section class="bottom-hero">
+      <div class="bottom-flex">
+        <div class="bottom-container first-bottom-container">
+          <div class="top-section">
+            <div style="width: 100px">
+              <img src="./assets/UI/user.png" alt="user" />
+              Hero
+            </div>
+            <div class="date">14/01/2021</div>
+          </div>
+          <div class="line"></div>
+          <div class="mid-section">
+            <div>
+              <img src="./assets/UI/robot.png" alt="robot1" width="56px" />
+            </div>
+            <div class="writing">
+              <span>Robot 1</span>
+              Dashes around beating Enemies with Fast Attacks
+            </div>
+            <div style="width: 50px">
+              <img src="./assets/UI/strength.png" alt="strength" width="48px" />
+            </div>
+          </div>
+        </div>
+        <div class="bottom-container">
+          <div class="top-section">
+            <div style="width: 100px">
+              <img src="./assets/UI/suitcase.png" alt="suitcase" />
+              Treasures
+            </div>
+            <div class="date">14/01/2021</div>
+          </div>
+          <div class="line"></div>
+          <div class="mid-section">
+            <div>
+              <img src="./assets/UI/noti.png" alt="noti" width="56px" />
+            </div>
+            <div class="writing grey">
+              <span>Increases the Stats</span>
+              <span style="color: aliceblue">&bull;</span> Coins
+              <span style="color: #00e8e8">&bull;</span> Score
+              <span style="color: #a22dff">&bull;</span> Bullet
+              <span style="color: #ead40c">&bull;</span> Health
+            </div>
+            <div style="width: 50px"></div>
+          </div>
+        </div>
+        <div class="bottom-container">
+          <div class="top-section">
+            <div style="width: 150px">
+              <img src="./assets/UI/swing.png" alt="swing" />
+              Swinging Enemy
+            </div>
+            <div class="date">14/01/2021</div>
+          </div>
+          <div class="line"></div>
+          <div class="mid-section">
+            <div>
+              <img
+                src="./assets/UI/main enemy.png"
+                alt="main-enemy"
+                width="56px"
+              />
+            </div>
+            <div class="writing grey">
+              <span>Destroy the Main Enemy</span>
+              Super Powerful Enemy That Swings
+            </div>
+            <div style="width: 50px"></div>
+          </div>
+        </div>
+      </div>
+      <img src="./assets/UI/Play button.png" alt="play" id="play-button" />
+    </section>
+    <!-- -------------------------BOTTOM Hero Section END------------------------- -->
+
+    <script src="./javascript/utility.js"></script>
+    <script src="./javascript/main.js" type="module"></script>
+  </body>
+</html>
